@@ -43,5 +43,9 @@ public class RuoloDAO {
     
     //TODO Davide, creare il metodo per eliminare un ruolo
     
+    public void delete(Ruolo ruolo) {
+        listaRuolo.remove(ruolo);
+    }
+    
     
 }

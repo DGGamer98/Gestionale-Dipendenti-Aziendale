@@ -34,13 +34,16 @@ public class ImpiegatoDAO {
     
     public void addImpiegato(Impiegato i) {
         listaImpiegato.add(i);
+        System.out.println("impiegato" + i + "aggiunto");
     }
     
     
-    public boolean update(Impiegato i) {
-        for (Impiegato impiegato : listaImpiegato) {
-            if(i.getCodiceFiscale().equals(impiegato)) {
-                listaImpiegato.add(i);
+    public boolean update(Impiegato i, Impiegato newImpiegato) {
+        for (int j = 0; j < listaImpiegato.size(); j++) {
+            Impiegato corrente = listaImpiegato.get(j);
+            
+            if(corrente.getCodiceFiscale().equals(i.getCodiceFiscale())) {
+                listaImpiegato.set(j, newImpiegato);//Sostituiamo il vecchio oggetto con quello nuovo
                 return true;
             }
         }
